@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.HotelDao">
+
+    <resultMap id="hotelResultMap" type="com.example.pojo.Hotel">
+
+        <id column="hotel_id" property="hotelId"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="hotel_location" property="hotelLocation"/>
+        <result column="hotel_name" property="hotelName"/>
+        <result column="hotel_rank" property="hotelRank"/>
+        <result column="hotel_price" property="hotelPrice"/>
+        <result column="hotel_score" property="hotelScore"/>
+        <result column="hotel_position" property="hotelPosition"/>
+        <result column="hotel_image" property="hotelImage"/>
+        <result column="hotel_establish_date" property="hotelEstablishDate"/>
+        <result column="hotel_count" property="hotelCount"/>
+
+        <collection property="detailsList"
+                     column="hotel_id"
+                     select="com.example.dao.HotelDetailsDao.getDetails"/>
+
+        <collection property="hotelImgList"
+                    column="hotel_id"
+                    select="com.example.dao.HotelImgDao.getAllImages"/>
+
+        <collection property="hotelCommentList"
+                    column="hotel_id"
+                    select="com.example.dao.HotelCommentDao.getAllComments"/>
+
+        <collection property="hotelRoomList"
+                    column="hotel_id"
+                    select="com.example.dao.HotelRoomDao.getAllRooms"/>
+
+    </resultMap>
+
+
+
+    <select id="getHotelById" resultMap="hotelResultMap">
+        select * from hotel where hotel_id = #{hotelId};
+    </select>
+</mapper>

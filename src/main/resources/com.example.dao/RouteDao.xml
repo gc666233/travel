@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.RouteDao">
+    <resultMap id="routeResultMap" type="com.example.pojo.Route">
+
+        <id column="route_id" property="routeId"/>
+        <result column="route_name" property="routeName"/>
+        <result column="route_price" property="routePrice"/>
+        <result column="route_introduce" property="routeIntroduce"/>
+        <result column="route_count" property="routeCount"/>
+        <result column="route_image" property="routeImage"/>
+        <result column="seller_id" property="sellerId"/>
+        <result column="category_id" property="categoryId"/>
+
+        <association property="seller"
+                     column="seller_id"
+                     javaType="com.example.pojo.Seller"
+                     select="com.example.dao.SellerDao.selectById"/>
+
+        <collection property="routeImgList"
+                    column="route_id"
+                    select="com.example.dao.RouteImgDao.selectAllByRouteId"/>
+
+    </resultMap>
+    <select id="getRouteById" resultMap="routeResultMap">
+        select * from route where route_id = #{routeId};
+    </select>
+
+</mapper>

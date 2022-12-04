@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机票</title>
+    <link rel="stylesheet" type="text/css" href="css/hotelDetails.css">
+    <link rel="stylesheet" type="text/css" href="css/flight.css">
+</head>
+<body>
+<div class="q_pagecontainer wide_banner">
+  <div id="header"></div>
+  <div class="q_pagewrap">
+    <!--首页搜索banner start-->
+    <div class="m-search-banner">
+      <div class="banner-default-bg">
+        <div class="banner-default-ct"></div>
+      </div>
+      <abbr id="topAD" style="display:none;" data-type="qde" data-query="chan=flight&pg=home&pos=top&site=qunar&size=1600x336" data-style="position:relative;"></abbr> </div>
+    <!--首页搜索banner end-->
+
+    <!--searchbox start-->
+    <div class="m-searchbox qunar-assist-screen-reserve">
+      <div class="m-searchBox-wp">
+        <!--b_fly_search-->
+        <div class="b_fly_search">
+          <div class='e_search_wrap'>
+            <div class='e_search_title'>
+              <h1>机票预订</h1>
+              <div class="rt_sch qunar-assist-hide" id="js_topicLink">
+                <div class="a_csl js_topicBtn" style="display:none;"><a onClick="return false;" href="#" onfocus='this.blur()' class="a_prev"></a><a onClick="return false;" href="#" onfocus='this.blur()' class="a_next"></a></div>
+                <ul class="c_cls js_topicLinkContent">
+                  <li><span class="f_gray">可实时搜索<span class="f_hl">&nbsp;68万&nbsp;</span>条国内国际航线</span></li>
+                  <li><abbr id="topicLinkL" data-type="qad" data-host="flightopdata"  data-query="id=5" style="display:none;"></abbr></li>
+                  <li><abbr id="topicLinkR" data-type="qad" data-host="flightopdata"  data-query="id=8" style="display:none;"></abbr></li>
+                </ul>
+              </div>
+            </div>
+            <div class="e_search_tab ch_search_tab">
+              <ul class="ul_search_tab">
+                <li id="js_domestic_tab" data-lnk="js_flighttype_tab_domestic" class="cur"><a onClick="return false;" href="#" onfocus='this.blur()' data-track='key=101010000&val=国内机票TAB'>国内机票</a></li>
+                <li id="js_inter_tab" class="qunar-assist-hide" data-lnk="js_flighttype_tab_inter"><a onClick="return false;" href="#" onfocus='this.blur()' data-track='key=101010001&val=国际港澳台机票TAB'>国际·港澳台机票</a></li>
+              </ul>
+              <div class="rt_link"><a href="#" target="_blank" class="icon-order" data-track='key=101010102&val=我的订单lnk'>我的订单</a> </div>
+            </div>
+            <div class="e_fly_search" id="search_box">
+              <!--国内-->
+              <div id="js_flighttype_tab_domestic" class="ch_sch_form">
+                <form id="dfsForm" action="" method="GET">
+                  <input type="hidden" name="from" value="flight_dom_search" />
+                  <div class="crl_sp_sel">
+                    <label for="searchTypeSng" id="js_lab_sng" data-track='key=101020001&val=单程radiobutton'>
+                      <input type="radio" class="inp_chk js-searchtype-oneway" value="OnewayFlight" id="searchTypeSng" name="searchType" checked="checked" />
+                      单程</label>
+                    <label for="searchTypeRnd" id="js_lab_rng" data-track='key=101020002&val=往返radiobutton'>
+                      <input type="radio" class="inp_chk js-searchtype-roundtrip" value="RoundTripFlight" id="searchTypeRnd" name="searchType" />
+                      往返</label>
+                  </div>
+                  <div class="crl_sp_city"> <a class="lnk_change js-exchagne-city" href="#" title="互换出发、到达城市" onFocus="this.blur()" data-track='key=101020007&val=换'>换</a>
+                    <div class="controls">
+                      <div class="qcbox qcity" style="z-index: 40;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">从</div>
+                          <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                        </div>
+                        <input type="text" value="" name="fromCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3" data-track="key=101020003&val=出发城市" />
+                        <div class="qcbox-fixed js-suggestcontainer"></div>
+                      </div>
+                    </div>
+                    <div class="controls">
+                      <div class="qcbox qcity" style="z-index: 30;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">到</div>
+                          <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                        </div>
+                        <input type="text" value="" name="toCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="4" data-track="key=101020004&val=到达城市" />
+                        <div class="qcbox-fixed js-suggestcontainer"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="crl_sp_date">
+                    <div class="controls">
+                      <div class="qcbox qdate fromD" style="z-index: 20;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">出发</div>
+                          <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                        </div>
+                        <input type="text" value="" name="fromDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" data-type="" data-track="key=101020005&val=出发日期" />
+                      </div>
+                    </div>
+                    <div class="controls js_arrivalDateDiv_disable">
+                      <div class="qcbox qdate toD qcbox_disable" style="z-index: 10;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">返回</div>
+                          <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="controls js_arrivalDateDiv" style="display:none;">
+                      <div class="qcbox qdate toD" style="z-index: 10;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">返回</div>
+                          <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                        </div>
+                        <input type="text" value="" name="toDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="返回" data-track="key=101020006&val=到达日期"  />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="crl_sp_action">
+                    <button class="btn_search" type="submit" data-track="key=101020008&val=国内搜索">搜　索</button>
+                  </div>
+                </form>
+              </div>
+              <!--\国内-->
+              <!--国际-->
+              <div id="js_flighttype_tab_inter" class="ch_sch_form" style="display:none;">
+                <form id="ifsForm" action="" method="GET">
+                  <input type="hidden" name="from" value="flight_int_search" />
+                  <input type="hidden" value="0" name="showTotalPr" />
+                  <div class="crl_sp_sel">
+                    <label for="searchTypeInterSng">
+                      <input type="radio" class="inp_chk js-searchtype-oneway" value="OnewayFlight" id="searchTypeInterSng" name="searchType" checked="checked" data-track='key=101030001&val=单程radiobutton' />
+                      单程</label>
+                    <label for="searchTypeInterRnd">
+                      <input type="radio" class="inp_chk js-searchtype-roundtrip" value="RoundTripFlight" id="searchTypeInterRnd" name="searchType" data-track='key=101030002&val=往返radiobutton' />
+                      往返</label>
+                    <label for="searchTypeInterFuzzy" style="display: none;">
+                      <input type="radio" class="inp_chk js-searchtype-fuzzytrip" value="FuzzyFlight" id="searchTypeInterFuzzy" name="searchType" data-track='key=101030009&val=智能搜索radiobutton' />
+                      智能搜索<i class="new"></i></label>
+                    <label for="searchTypeMulti" style="display: none;">
+                      <input type="radio" class="inp_chk js-searchtype-multitrip" value="MultiTripFlight" name="searchType" id="searchTypeMulti"  data-track='key=101030003&val=多程radiobutton' />
+                      多程（<span id="hoverInfo">含缺口</span>）</label>
+                    <div class="morline-point" style="display:none;" id="morlinePoint">
+                      <p>"缺口程"机票指的是三地或四地之间的机票行程，举例如下：</p>
+                      <p>1.由城市A到达城市B，再由C城市到达A。</p>
+                      <p>2.由城市A到达城市B，再由B城市到达C。</p>
+                      <p>3.由城市A到达城市B，再由C城市到达D。</p>
+                      <div class="arrow-right"></div>
+                    </div>
+                  </div>
+                  <div class="one-round-ser" id="one-round-ser">
+                    <div class="crl_sp_city"> <a class="lnk_change js-exchagne-city" href="#" title="互换出发、到达城市" onFocus="this.blur()" data-track='key=101030007&val=换button'>换</a>
+                      <div class="controls">
+                        <div style="z-index: 40;" class="qcbox qcity">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">从</div>
+                            <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                          </div>
+                          <input type="text" value="" name="fromCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3" data-track='key=101030003&val=出发城市' />
+                          <div class="qcbox-fixed js-suggestcontainer"></div>
+                        </div>
+                      </div>
+                      <div class="controls">
+                        <div style="z-index: 30;" class="qcbox qcity">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">到</div>
+                            <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                          </div>
+                          <input type="text" value="" name="toCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="4" data-track='key=101030004&val=到达城市' />
+                          <div class="qcbox-fixed js-suggestcontainer"></div>
+                        </div>
+                      </div>
+                      <div class="controls passnum">
+                        <div class="yselector" id="adtnum_box">
+                          <div class="yselector_box" id="adt_num">
+                            <div class="yselector_arraw"><b></b></div>
+                            <span class="yselector_input" title="成人">成人</span>
+                            <input name="adultNum" value="1" readonly>
+                          </div>
+                          <div class="sel_suggest" style="display: none;"><ul></ul></div>
+                        </div>
+                        <div class="yselector" id="chdnum_box">
+                          <div class="yselector_box" id="chd_num">
+                            <div class="yselector_arraw"><b></b></div>
+                            <span class="yselector_input" title="儿童">儿童</span>
+                            <input name="childNum" value="0" readonly>
+                          </div>
+                          <div class="sel_suggest" style="display: none;"><ul><li>1</li><li>1</li><li>1</li></ul></div>
+                        </div>
+                        <div class="passnum_tip js_passnum_tip"><i></i>准确选择乘客人数，可享受最优价格。<span class="hide_passnum_tip js_hide_passnum_tip">知道了</span></div>
+                        <div class="child_tip js_child_tip"><i></i>2岁-12岁(不含)</div>
+                      </div>
+                    </div>
+                    <div class="crl_sp_date">
+                      <div class="controls">
+                        <div style="z-index: 20;" class="qcbox qdate fromD">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">出发</div>
+                            <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                          </div>
+                          <input type="text" value="" name="fromDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" data-type="" data-track='key=101030005&val=出发日期' />
+                        </div>
+                      </div>
+                      <div class="controls js_arrivalDateDiv_disable">
+                        <div style="z-index: 10;" class="qcbox qdate toD qcbox_disable">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">返回</div>
+                            <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="controls js_arrivalDateDiv" style="display:none;">
+                        <div style="z-index: 10;" class="qcbox qdate toD">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">返回</div>
+                            <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                          </div>
+                          <input type="text" value="" id="toDate" name="toDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="返回" data-track='key=101030006&val=到达日期' />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="moreway-ser" id="moreway-ser" style='display:none;'>
+                    <div class="" id="js_trips_list">
+                      <div class="muti_control">
+                        <div class="crl_sp_city">
+                          <div class="crl_lab">第<span class="hl">1</span>程</div>
+                          <div class="controls">
+                            <div style="z-index: 40;" class="qcbox qcity">
+                              <div class="qunar-qcbox">
+                                <div class="qcbox-prefix">从</div>
+                                <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                              </div>
+                              <input type="text" value="" name="fromCityMulti" class="textbox" data-qcbox-placeholder="出发地" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" />
+                              <div class="qcbox-fixed js-suggestcontainer"></div>
+                            </div>
+                          </div>
+                          <div class="controls">
+                            <div style="z-index: 30;" class="qcbox qcity">
+                              <div class="qunar-qcbox">
+                                <div class="qcbox-prefix">到</div>
+                                <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                              </div>
+                              <input type="text" value="" name="toCityMulti" class="textbox" data-qcbox-placeholder="目的地" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" />
+                              <div class="qcbox-fixed js-suggestcontainer"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="crl_sp_date">
+                          <div class="qcbox qdate fromD">
+                            <div class="qunar-qcbox">
+                              <div class="qcbox-prefix">出发</div>
+                              <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                            </div>
+                            <input type="text" value="" name="fromDateMulti" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="muti_control">
+                        <div class="crl_sp_city">
+                          <div class="crl_lab">第<span class="hl">2</span>程</div>
+                          <div class="controls">
+                            <div class="qcbox qcity">
+                              <div class="qunar-qcbox">
+                                <div class="qcbox-prefix">从</div>
+                                <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                              </div>
+                              <input type="text" value="" name="fromCityMulti" class="textbox" data-qcbox-placeholder="出发地" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" />
+                              <div class="qcbox-fixed js-suggestcontainer"></div>
+                            </div>
+                          </div>
+                          <div class="controls">
+                            <div class="qcbox qcity">
+                              <div class="qunar-qcbox">
+                                <div class="qcbox-prefix">到</div>
+                                <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                              </div>
+                              <input type="text" value="" name="toCityMulti" class="textbox" data-qcbox-placeholder="目的地" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" />
+                              <div class="qcbox-fixed js-suggestcontainer"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="crl_sp_date">
+                          <div class="qcbox qdate fromD">
+                            <div class="qunar-qcbox">
+                              <div class="qcbox-prefix">出发</div>
+                              <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                            </div>
+                            <input type="text" value="" name="fromDateMulti" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="more-line-a"><a id="js_addtrip" href="javascript:void(0);">添加更多航程</a></div>
+                  </div>
+                  <div class="fuzzy-ser" id="fuzzy-ser" style='display:none;'>
+                    <input type="hidden" value="roundtrip" name="fuzzySchType" />
+                    <div class="crl_sp_city">
+                      <div class="qcbox qcity qfuzzy">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-placeholder" style="display: none;"></div>
+                          <div class="qcbox-prefix">出发</div>
+                          <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                        </div>
+                        <input type="text" value="" name="fromFuzzy" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="出发" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3">
+                        <div class="qcbox-fixed js-suggestcontainer">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="crl_sp_fuzzy">
+                      <div class="qcbox-fuzzy">
+                        <div class="qunar-qcbox">
+                          <div class="qn-prefix">我想去</div>
+                          <div class="qn-qcbox"></div>
+                          <div class="qn-plc"><div class="plc">可输入城市或国家</div></div>
+                        </div>
+                        <input type="text" style="padding-left:0px;" value="" name="toFuzzy" class="textbox" data-qcboxfuzzy-placeholder="可输入城市或国家" data-qcboxfuzzy-prefix="我想去" data-qcboxfuzzy-suggest="flight-tofuzzy" data-qcboxfuzzy-hotfuzzy="flightfuzzy" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3">
+                        <div class="qcbox-fixed js-suggestcontainer">
+                        </div>
+                        <input type="hidden" name="topic" id="topic" value="" />
+                        <input type="hidden" name="arrType" id="arrType" value="" />
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="m-hot">
+                      <div class="h-wrap">
+                        <div class="lab">大家都在搜：</div>
+                        <div class="ifo js-fuz-rec">
+                          <ul>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">免签/落地签</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">海滩</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">第1次出国</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">暑假</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">蜜月</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">亲子</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">文化遗产</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">美食</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">潜水</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">购物</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">电影/音乐</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">山岭/滑雪</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">中世纪城堡</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">穷游</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">世界杯</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">古迹</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">都市</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">毕业季</a></li>
+                            <li><a class="js-fuz" data-type="2" data-code="" href="#">出国低价</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricetrend-ser" id="pricetrend-ser" style='display:none;'>
+                    <div class="crl_sp_city"> <a class="lnk_change js-exchagne-pcity" href="#" title="互换出发、到达城市" onFocus="this.blur()" data-track='key=101030007&val=换button'>换</a>
+                      <div class="controls">
+                        <div class="qcbox qcity" style="z-index: 40;">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">从</div>
+                            <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                          </div>
+                          <input type="text" value="" name="pfromCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3" />
+                          <div class="qcbox-fixed js-suggestcontainer"></div>
+                        </div>
+                      </div>
+                      <div class="controls">
+                        <div class="qcbox qcity" style="z-index: 30;">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">到</div>
+                            <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                          </div>
+                          <input type="text" value="" name="ptoCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="4" />
+                          <div class="qcbox-fixed js-suggestcontainer"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="crl_sp_date">
+                      <div class="controls">
+                        <div class="qcbox qdate fromD" style="z-index: 20;">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">出发</div>
+                            <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                          </div>
+                          <input type="text" value="" id="pfromDate" name="pfromDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" data-type="" />
+                        </div>
+                      </div>
+                      <div class="controls" style=" visibility:hidden">
+                        <div style="z-index: 10;" class="qcbox qdate toD qcbox_disable">
+                          <div class="qunar-qcbox">
+                            <div class="qcbox-prefix">返回</div>
+                            <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="crl_sp_action" id="searchboxList">
+                    <button class="btn_search" type="submit" data-track="key=101030008&val=国际港澳台搜索">搜　索</button>
+                  </div>
+                </form>
+              </div>
+              <!--\国际-->
+              <!--特价-->
+              <div id="js_flighttype_tab_tj" class="ch_sch_form" style="display:none;">
+                <form id="dealsForm" action="" method="GET">
+                  <input type="hidden" name="from" value="flight_tejia_search" />
+                  <input type="hidden" name="searchType" value="DealsFlight" />
+                  <input type="hidden" name="drange" value="15" />
+                  <div class="crl_sp_sel">
+                    <div class="b_hongbao_lst ">
+                      <a target="_blank" href="#">买机票获预订酒店5折特权</a>
+                    </div>
+                    <label class="lal_rdo" for="js_searchtype_domestic" hidefocus="on">
+                      <input name="search" type="radio" class="inp_chk js-searchtype-domestic" value="domestic" checked="checked" id="js_searchtype_domestic" data-hotcity-prefix="domestic" />
+                      国内航线</label>
+                    <label class="lal_rdo" for="js_searchtype_international" hidefocus="on">
+                      <input name="search" type="radio" class="inp_chk js-searchtype-international" value="international" id="js_searchtype_international"  data-hotcity-prefix="multitrip" />
+                      国际·港澳台航线</label>
+                  </div>
+                  <div class="crl_sp_city"> <a class="lnk_change js-exchagne-city" href="#" title="互换出发、到达城市" onFocus="this.blur()" data-track="key=101040008&val=换button">换</a>
+                    <div class="controls">
+                      <div class="qcbox qcity" style="z-index: 40;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">从</div>
+                          <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                        </div>
+                        <input type="text" value="" name="fromCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="从" data-qcbox-suggest="flight-fromcity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="3" data-track='key=101040002&val=出发城市' />
+                        <div class="qcbox-fixed js-suggestcontainer"></div>
+                      </div>
+                    </div>
+                    <div class="controls">
+                      <div class="qcbox qcity" style="z-index: 30;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">到</div>
+                          <div class="qcbox-info"><b class="iconfont f-location"></b></div>
+                        </div>
+                        <input type="text" value="" name="toCity" class="textbox" data-qcbox-placeholder="城市名" data-qcbox-prefix="到" data-qcbox-suggest="flight-tocity" data-qcbox-hotcity="flight" spellcheck="false" autocomplete="off" x-webkit-speech="x-webkit-speech" data-detect-oninput="4" data-track='key=101040003&val=到达城市'/>
+                        <div class="qcbox-fixed js-suggestcontainer"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="crl_sp_date">
+                    <div class="controls">
+                      <div class="qcbox qdate fromD" style="z-index: 20;">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">出发</div>
+                          <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                        </div>
+                        <input type="text" value="" id="fromDate" name="fromDate" class="textbox" spellcheck="false" autocomplete="off" maxlength="10" data-prefix="出发" data-type="" data-track='key=101040004&val=出发日期' />
+                      </div>
+                    </div>
+                    <div class="controls" style=" visibility:hidden">
+                      <div style="z-index: 10;" class="qcbox qdate toD qcbox_disable">
+                        <div class="qunar-qcbox">
+                          <div class="qcbox-prefix">返回</div>
+                          <div class="qcbox-info"><b class="iconfont f-calendar"></b></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="crl_sp_action">
+                    <button class="btn_search" type="submit" data-track="key=101040009&val=特价机票搜索">搜　索</button>
+                  </div>
+                </form>
+              </div>
+              <!--\特价-->
+              <div class="m-bao">
+                <div class="m-bao-pho">
+                  <p class='dom-pho'>24小时客服电话：<span>95117</span></p>
+                  <p class='inter-pho'>海外用户请拨打 (+8610) 59606999</p>
+                </div>
+                <a class="m-bao-logo" href="#" target="_blank"><i></i>全程预订保障 去哪儿都放心</a> </div>
+            </div>
+          </div>
+        </div>
+        <!--\b_fly_search-->
+      </div>
+    </div>
+    <!--searchbox end-->
+
+    <div class="q_page">
+      <!--  <div class="dlAd" id="ad_active_container">
+          <div class="dll"><abbr style="display:none;" id="home_active_couplet_left" data-style="width:120px;"></abbr></div>
+          <div class="dlr"><abbr style="display:none;" id="home_active_couplet_right" data-style="width:120px;"></abbr> <abbr style="display:none;" data-type="qde" data-query="chan=flight&pg=home&pos=right&site=qunar&size=120x300&type=couplet" id="couplet_load"></abbr> </div>
+      </div> -->
+      <div class="l_lside">
+
+        <!--全球特价&航司促销 start -->
+        <abbr id="ad_home_leftAD_float" style="display:none;" data-style="width:100%;" data-type="qde" data-query="chan=flight&pg=home&pos=left&site=qunar&size=24x202&type=floating_layer"></abbr>
+        <div class="m_global_sales m_slide qunar-assist-hide" id="airlineList_panel" style="display: none;">
+          <!--<div class="m_global_hd m_slide_hd">-->
+          <!--<div class="title">-->
+          <!--&lt;!&ndash;<h3 data-tab="promotion" class="on">航空公司促销</h3>&ndash;&gt;-->
+          <!--</div>-->
+          <!--</div>-->
+          <div class="m_global_bd qunar-assist-hide">
+            <div class="m_slide_co">
+              <abbr id="airlineList" data-host="flightopdata" style="display:none;" data-type="qad"  data-query="id=17"></abbr>
+              <div data-tab="promotion" id="airlineList_content" class="m_global_ct clrfix">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--全球特价 end-->
+
+        <!--b_fly_routes-->
+        <div class="b_fly_routes  qunar-assist-hide" id="InterLowPriceHome">
+          <div class="b_sep_route m_slide">
+            <div class="e_route_hd m_slide_hd"> <div class="m_rt_tab">  <ul class="ul_route_tab">    <li data-to="Hot" class="cur"><a onfocus="blur()" href="javascript:;">热门</a></li>   <li data-to="Asia"><em class="sl"></em><a onfocus="blur()" href="javascript:;">亚洲</a></li>  <li data-to="America"><em class="sl"></em><a onfocus="blur()" href="javascript:;">美洲</a></li>   <li data-to="Europe"><em class="sl"></em><a onfocus="blur()" href="javascript:;">欧洲</a></li>    <li data-to="Africa/Oceania"><em class="sl"></em><a onfocus="blur()" href="javascript:;">非洲/大洋洲</a></li>   </ul>   <div class="sel_panel" style="display:inline"><div class="b_select_box b_select_box_month"> <div class="e_select_hd"><span class="e_select_input">全部月份</span><i class="iconfont f-caret-down"></i></div> <div class="e_select_sug"> <ul><li data-month="All"><a href="javascript:;">全部月份</a></li><li data-month="4,5"><a href="javascript:;">4月&nbsp;5月</a></li><li data-month="6,7"><a href="javascript:;">6月&nbsp;7月</a></li><li data-month="8,9"><a href="javascript:;">8月&nbsp;9月</a></li>  </ul> </div></div><div class="b_select_box b_select_box_city"> <div class="e_select_hd"><span class="e_select_input">北京出发</span><i class="iconfont f-caret-down"></i></div> <div class="e_select_sug">  <ul><li data-from="北京"><a href="javascript:;">北京</a></li><li data-from="上海"><a href="javascript:;">上海</a></li><li data-from="广州"><a href="javascript:;">广州</a></li><li data-from="成都"><a href="javascript:;">成都</a></li><li data-from="昆明"><a href="javascript:;">昆明</a></li><li data-from="杭州"><a href="javascript:;">杭州</a></li><li data-from="厦门"><a href="javascript:;">厦门</a></li><li data-from="港澳台"><a href="javascript:;">港澳台</a></li><li data-from="其他城市"><a href="javascript:;">其他城市</a></li> </ul> </div></div></div> </div> <h3>国际•港澳台</h3><span class="lines">低价航线</span> <div class="bg_postmark"><i class="bg_wf"></i></div></div>
+            <div class="m_slide_bd">
+              <div class="e_route_ct">
+                <div class="m_route_wp clrfix"><ul class="ul_route_lst"><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A9%AC%E5%B0%BC%E6%8B%89&amp;fromDate=2015-05-08&amp;lowestPrice=165&amp;toDate=2015-06-04" title="¥165 北京-马尼拉 05.08-06.04"><span class="city">北京<i class="i_wf"></i>马尼拉</span><span class="pr"><i class="rmb">¥</i>165</span><span class="date">05.08<i class="i_wf"></i>06.04</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%9C%A3%E5%BD%BC%E5%BE%97%E5%A0%A1&amp;fromDate=2015-06-02&amp;lowestPrice=232&amp;toDate=2015-06-20" title="¥232 北京-圣彼得堡 06.02-06.20"><span class="city">北京<i class="i_wf"></i>圣彼得堡</span><span class="pr"><i class="rmb">¥</i>232</span><span class="date">06.02<i class="i_wf"></i>06.20</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E8%83%A1%E5%BF%97%E6%98%8E%E5%B8%82&amp;fromDate=2015-05-26&amp;lowestPrice=248&amp;toDate=2015-06-27" title="¥248 北京-胡志明市 05.26-06.27"><span class="city">北京<i class="i_wf"></i>胡志明市</span><span class="pr"><i class="rmb">¥</i>248</span><span class="date">05.26<i class="i_wf"></i>06.27</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A6%99%E6%B8%AF&amp;fromDate=2015-05-26&amp;lowestPrice=332&amp;toDate=2015-06-02" title="¥332 北京-香港 05.26-06.02"><span class="city">北京<i class="i_wf"></i>香港</span><span class="pr"><i class="rmb">¥</i>332</span><span class="date">05.26<i class="i_wf"></i>06.02</span></a></li><li class="li_space"></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E8%8E%AB%E6%96%AF%E7%A7%91&amp;fromDate=2015-04-13&amp;lowestPrice=372&amp;toDate=2015-07-12" title="¥372 北京-莫斯科 04.13-07.12"><span class="city">北京<i class="i_wf"></i>莫斯科</span><span class="pr"><i class="rmb">¥</i>372</span><span class="date">04.13<i class="i_wf"></i>07.12</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%87%91%E8%BE%B9&amp;fromDate=2015-05-28&amp;lowestPrice=400&amp;toDate=2015-06-27" title="¥400 北京-金边 05.28-06.27"><span class="city">北京<i class="i_wf"></i>金边</span><span class="pr"><i class="rmb">¥</i>400</span><span class="date">05.28<i class="i_wf"></i>06.27</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%BE%B3%E9%97%A8&amp;fromDate=2015-05-03&amp;lowestPrice=428&amp;toDate=2015-06-02" title="¥428 北京-澳门 05.03-06.02"><span class="city">北京<i class="i_wf"></i>澳门</span><span class="pr"><i class="rmb">¥</i>428</span><span class="date">05.03<i class="i_wf"></i>06.02</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%90%89%E9%9A%86%E5%9D%A1&amp;fromDate=2015-06-29&amp;lowestPrice=529&amp;toDate=2015-07-14" title="¥529 北京-吉隆坡 06.29-07.14"><span class="city">北京<i class="i_wf"></i>吉隆坡</span><span class="pr"><i class="rmb">¥</i>529</span><span class="date">06.29<i class="i_wf"></i>07.14</span></a></li></ul><div class="line"></div><ul class="ul_route_lst"><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%90%8D%E5%8F%A4%E5%B1%8B&amp;fromDate=2015-04-27&amp;lowestPrice=556&amp;toDate=2015-05-26" title="¥556 北京-名古屋 04.27-05.26"><span class="city">北京<i class="i_wf"></i>名古屋</span><span class="pr"><i class="rmb">¥</i>556</span><span class="date">04.27<i class="i_wf"></i>05.26</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E4%BB%B0%E5%85%89&amp;fromDate=2015-04-24&amp;lowestPrice=593&amp;toDate=2015-05-22" title="¥593 北京-仰光 04.24-05.22"><span class="city">北京<i class="i_wf"></i>仰光</span><span class="pr"><i class="rmb">¥</i>593</span><span class="date">04.24<i class="i_wf"></i>05.22</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%B7%B4%E5%8E%98%E5%B2%9B&amp;fromDate=2015-05-06&amp;lowestPrice=640&amp;toDate=2015-05-14" title="¥640 北京-巴厘岛 05.06-05.14"><span class="city">北京<i class="i_wf"></i>巴厘岛</span><span class="pr"><i class="rmb">¥</i>640</span><span class="date">05.06<i class="i_wf"></i>05.14</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%8F%B0%E5%8C%97&amp;fromDate=2015-05-10&amp;lowestPrice=643&amp;toDate=2015-06-09" title="¥643 北京-台北 05.10-06.09"><span class="city">北京<i class="i_wf"></i>台北</span><span class="pr"><i class="rmb">¥</i>643</span><span class="date">05.10<i class="i_wf"></i>06.09</span></a></li><li class="li_space"></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A6%96%E5%B0%94&amp;fromDate=2015-07-12&amp;lowestPrice=645&amp;toDate=2015-09-10" title="¥645 北京-首尔 07.12-09.10"><span class="city">北京<i class="i_wf"></i>首尔</span><span class="pr"><i class="rmb">¥</i>645</span><span class="date">07.12<i class="i_wf"></i>09.10</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%9A%B9%E7%B2%92&amp;fromDate=2015-08-24&amp;lowestPrice=680&amp;toDate=2015-09-12" title="¥680 北京-暹粒 08.24-09.12"><span class="city">北京<i class="i_wf"></i>暹粒</span><span class="pr"><i class="rmb">¥</i>680</span><span class="date">08.24<i class="i_wf"></i>09.12</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%87%9C%E5%B1%B1&amp;fromDate=2015-04-11&amp;lowestPrice=707&amp;toDate=2015-07-09" title="¥707 北京-釜山 04.11-07.09"><span class="city">北京<i class="i_wf"></i>釜山</span><span class="pr"><i class="rmb">¥</i>707</span><span class="date">04.11<i class="i_wf"></i>07.09</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=RoundTripFlight&amp;from=tejia_inton_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%9B%BC%E8%B0%B7&amp;fromDate=2015-06-17&amp;lowestPrice=732&amp;toDate=2015-06-27" title="¥732 北京-曼谷 06.17-06.27"><span class="city">北京<i class="i_wf"></i>曼谷</span><span class="pr"><i class="rmb">¥</i>732</span><span class="date">06.17<i class="i_wf"></i>06.27</span></a></li></ul></div>
+                <div class="e_route_lk"><a target="_blank" href="#">订阅低价提醒</a></div>
+              </div>
+            </div>
+          </div>
+          <!--b_fly_ban-->
+          <div class="b_fly_ban"><div class="left-ad-banner"> <abbr id="ad_home_leftAD_middle" style="display:none;" data-style="width:100%; margin:0 0 32px;" data-type="qde" data-query="chan=flight&pg=home&pos=top&site=qunar&size=912x90"></abbr> </div></div>
+          <!--\b_fly_ban-->
+          <div class="b_sep_route m_slide"><div class="e_route_hd m_slide_hd"> <div class="m_rt_tab"> <ul class="ul_route_tab">    <li data-to="Hot" class="cur"><a onfocus="blur()" href="javascript:;">热门</a></li>   <li data-to="Asia"><em class="sl"></em><a onfocus="blur()" href="javascript:;">亚洲</a></li>  <li data-to="America"><em class="sl"></em><a onfocus="blur()" href="javascript:;">美洲</a></li>   <li data-to="Europe"><em class="sl"></em><a onfocus="blur()" href="javascript:;">欧洲</a></li>    <li data-to="Africa/Oceania"><em class="sl"></em><a onfocus="blur()" href="javascript:;">非洲/大洋洲</a></li>   </ul>   <div class="sel_panel" style="display:inline"><div class="b_select_box b_select_box_month"> <div class="e_select_hd"><span class="e_select_input">全部月份</span><i class="iconfont f-caret-down"></i></div> <div class="e_select_sug"> <ul><li data-month="All"><a href="javascript:;">全部月份</a></li><li data-month="4,5"><a href="javascript:;">4月&nbsp;5月</a></li><li data-month="6,7"><a href="javascript:;">6月&nbsp;7月</a></li><li data-month="8,9"><a href="javascript:;">8月&nbsp;9月</a></li>  </ul> </div></div><div class="b_select_box b_select_box_city"> <div class="e_select_hd"><span class="e_select_input">北京出发</span><i class="iconfont f-caret-down"></i></div> <div class="e_select_sug">  <ul><li data-from="北京"><a href="javascript:;">北京</a></li><li data-from="上海"><a href="javascript:;">上海</a></li><li data-from="广州"><a href="javascript:;">广州</a></li><li data-from="成都"><a href="javascript:;">成都</a></li><li data-from="昆明"><a href="javascript:;">昆明</a></li><li data-from="杭州"><a href="javascript:;">杭州</a></li><li data-from="厦门"><a href="javascript:;">厦门</a></li><li data-from="港澳台"><a href="javascript:;">港澳台</a></li><li data-from="其他城市"><a href="javascript:;">其他城市</a></li> </ul> </div></div></div> </div> <h3>国际•港澳台</h3><span class="lines">低价航线</span> <div class="bg_postmark"><i class="bg_dc"></i></div></div><div class="m_slide_bd"><div class="e_route_ct"> <div class="m_route_wp clrfix"><ul class="ul_route_lst"><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%90%89%E9%9A%86%E5%9D%A1&amp;fromDate=2016-03-13&amp;lowestPrice=154" title="¥154 北京-吉隆坡 03.13"><span class="city">北京<i class="i_ow"></i>吉隆坡</span><span class="pr"><i class="rmb">¥</i>154</span><span class="date">03.13</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A6%99%E6%B8%AF&amp;fromDate=2015-05-26&amp;lowestPrice=220" title="¥220 北京-香港 05.26"><span class="city">北京<i class="i_ow"></i>香港</span><span class="pr"><i class="rmb">¥</i>220</span><span class="date">05.26</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A9%AC%E5%B0%BC%E6%8B%89&amp;fromDate=2015-06-21&amp;lowestPrice=247" title="¥247 北京-马尼拉 06.21"><span class="city">北京<i class="i_ow"></i>马尼拉</span><span class="pr"><i class="rmb">¥</i>247</span><span class="date">06.21</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E8%8E%AB%E6%96%AF%E7%A7%91&amp;fromDate=2015-05-24&amp;lowestPrice=254" title="¥254 北京-莫斯科 05.24"><span class="city">北京<i class="i_ow"></i>莫斯科</span><span class="pr"><i class="rmb">¥</i>254</span><span class="date">05.24</span></a></li><li class="li_space"></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%9C%A3%E5%BD%BC%E5%BE%97%E5%A0%A1&amp;fromDate=2015-05-15&amp;lowestPrice=459" title="¥459 北京-圣彼得堡 05.15"><span class="city">北京<i class="i_ow"></i>圣彼得堡</span><span class="pr"><i class="rmb">¥</i>459</span><span class="date">05.15</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%87%91%E8%BE%B9&amp;fromDate=2015-05-03&amp;lowestPrice=486" title="¥486 北京-金边 05.03"><span class="city">北京<i class="i_ow"></i>金边</span><span class="pr"><i class="rmb">¥</i>486</span><span class="date">05.03</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%9A%B9%E7%B2%92&amp;fromDate=2015-05-10&amp;lowestPrice=486" title="¥486 北京-暹粒 05.10"><span class="city">北京<i class="i_ow"></i>暹粒</span><span class="pr"><i class="rmb">¥</i>486</span><span class="date">05.10</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%85%B0%E5%8D%A1%E5%A8%81&amp;fromDate=2016-03-02&amp;lowestPrice=502" title="¥502 北京-兰卡威 03.02"><span class="city">北京<i class="i_ow"></i>兰卡威</span><span class="pr"><i class="rmb">¥</i>502</span><span class="date">03.02</span></a></li></ul><div class="line"></div><ul class="ul_route_lst"><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%B2%98%E6%B8%AF&amp;fromDate=2015-05-10&amp;lowestPrice=519" title="¥519 北京-岘港 05.10"><span class="city">北京<i class="i_ow"></i>岘港</span><span class="pr"><i class="rmb">¥</i>519</span><span class="date">05.10</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%96%B0%E5%8A%A0%E5%9D%A1&amp;fromDate=2015-05-10&amp;lowestPrice=519" title="¥519 北京-新加坡 05.10"><span class="city">北京<i class="i_ow"></i>新加坡</span><span class="pr"><i class="rmb">¥</i>519</span><span class="date">05.10</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%BE%B3%E9%97%A8&amp;fromDate=2015-05-29&amp;lowestPrice=547" title="¥547 北京-澳门 05.29"><span class="city">北京<i class="i_ow"></i>澳门</span><span class="pr"><i class="rmb">¥</i>547</span><span class="date">05.29</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%A6%96%E5%B0%94&amp;fromDate=2015-04-10&amp;lowestPrice=560" title="¥560 北京-首尔 04.10"><span class="city">北京<i class="i_ow"></i>首尔</span><span class="pr"><i class="rmb">¥</i>560</span><span class="date">04.10</span></a></li><li class="li_space"></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%A4%A7%E9%98%AA&amp;fromDate=2015-05-01&amp;lowestPrice=560" title="¥560 北京-大阪 05.01"><span class="city">北京<i class="i_ow"></i>大阪</span><span class="pr"><i class="rmb">¥</i>560</span><span class="date">05.01</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E4%BB%B0%E5%85%89&amp;fromDate=2015-05-10&amp;lowestPrice=570" title="¥570 北京-仰光 05.10"><span class="city">北京<i class="i_ow"></i>仰光</span><span class="pr"><i class="rmb">¥</i>570</span><span class="date">05.10</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%A7%9F%E5%9F%8E&amp;fromDate=2015-06-24&amp;lowestPrice=597" title="¥597 北京-槟城 06.24"><span class="city">北京<i class="i_ow"></i>槟城</span><span class="pr"><i class="rmb">¥</i>597</span><span class="date">06.24</span></a></li><li><a target="_blank" onfocus="blur()" href="/twell/flight/Search.jsp?searchType=OnewayFlight&amp;from=tejia_inter_search&amp;fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%98%BF%E5%A7%86%E6%96%AF%E7%89%B9%E4%B8%B9&amp;fromDate=2015-04-28&amp;lowestPrice=600" title="¥600 北京-阿姆斯特丹 04.28"><span class="city">北京<i class="i_ow"></i>阿姆斯特丹</span><span class="pr"><i class="rmb">¥</i>600</span><span class="date">04.28</span></a></li></ul></div></div></div></div>
+        </div>
+        <!--\b_fly_routes-->
+
+        <!--b_fly_cheap-->
+        <div class="m_dom_route b_fly_routes m_slide qunar-assist-screen-product" id="dFlight">
+          <div class="b_sep_route">
+            <div id="dFightTitle" class="e_route_hd m_slide_hd">
+              <div class="m_rt_tab">
+                <ul class="ul_route_tab">
+                  <li class="cur"><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090001">北京</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090002">上海</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090003">广州</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090004">深圳</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090005">杭州</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090006">成都</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090007">南京</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090008">武汉</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090009">重庆</a></li>
+                  <li class=""><a href="#" hidefocus="on" onclick="return false;" data-track="key=101090010">昆明</a></li>
+                  <li class="more"></li>
+                </ul>
+              </div>
+              <h3>国内低价机票</h3>
+            </div>
+            <div id="dFlightContent" class="m_slide_bd"><div class="m_slide_co"> <div class="m_route_wp d_route clrfix"><ul class="ul_route_lst">            <li><a title="¥8 北京-阿尔山 04.14 0.1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%98%BF%E5%B0%94%E5%B1%B1&amp;fromDate=2015-04-14&amp;toDate=2015-04-17&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090012"><span class="city">北京<i class="i_ow"></i>阿尔山</span><span class="date">04.14</span><span class="dis">0.1折</span><span class="pr"><i class="rmb">¥</i>8</span></a></li>            <li><a title="¥5 北京-东营 04.20 0.1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E4%B8%9C%E8%90%A5&amp;fromDate=2015-04-20&amp;toDate=2015-04-23&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090013"><span class="city">北京<i class="i_ow"></i>东营</span><span class="date">04.20</span><span class="dis">0.1折</span><span class="pr"><i class="rmb">¥</i>5</span></a></li>            <li><a title="¥28 北京-大同 04.16 0.5折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%A4%A7%E5%90%8C&amp;fromDate=2015-04-16&amp;toDate=2015-04-19&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090014"><span class="city">北京<i class="i_ow"></i>大同</span><span class="date">04.16</span><span class="dis">0.5折</span><span class="pr"><i class="rmb">¥</i>28</span></a></li>            <li><a title="¥72 北京-青岛 04.19 0.6折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%9D%92%E5%B2%9B&amp;fromDate=2015-04-19&amp;toDate=2015-04-22&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090015"><span class="city">北京<i class="i_ow"></i>青岛</span><span class="date">04.19</span><span class="dis">0.6折</span><span class="pr"><i class="rmb">¥</i>72</span></a></li><li class="li_space"></li>            <li><a title="¥107 北京-合肥 04.18 0.7折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%90%88%E8%82%A5&amp;fromDate=2015-04-18&amp;toDate=2015-04-21&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090016"><span class="city">北京<i class="i_ow"></i>合肥</span><span class="date">04.18</span><span class="dis">0.7折</span><span class="pr"><i class="rmb">¥</i>107</span></a></li>            <li><a title="¥67 北京-太原 04.15 0.7折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%A4%AA%E5%8E%9F&amp;fromDate=2015-04-15&amp;toDate=2015-04-18&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090017"><span class="city">北京<i class="i_ow"></i>太原</span><span class="date">04.15</span><span class="dis">0.7折</span><span class="pr"><i class="rmb">¥</i>67</span></a></li>            <li><a title="¥38 北京-呼和浩特 05.09 0.7折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9&amp;fromDate=2015-05-09&amp;toDate=2015-05-12&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090018"><span class="city">北京<i class="i_ow"></i>呼和浩特</span><span class="date">05.09</span><span class="dis">0.7折</span><span class="pr"><i class="rmb">¥</i>38</span></a></li>            <li><a title="¥71 北京-烟台 04.18 1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E7%83%9F%E5%8F%B0&amp;fromDate=2015-04-18&amp;toDate=2015-04-21&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090019"><span class="city">北京<i class="i_ow"></i>烟台</span><span class="date">04.18</span><span class="dis">1折</span><span class="pr"><i class="rmb">¥</i>71</span></a></li><li class="li_space"></li>            <li><a title="¥68 北京-包头 05.06 1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%8C%85%E5%A4%B4&amp;fromDate=2015-05-06&amp;toDate=2015-05-09&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090020"><span class="city">北京<i class="i_ow"></i>包头</span><span class="date">05.06</span><span class="dis">1折</span><span class="pr"><i class="rmb">¥</i>68</span></a></li>            <li><a title="¥89 北京-延安 04.26 1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%BB%B6%E5%AE%89&amp;fromDate=2015-04-26&amp;toDate=2015-04-29&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090021"><span class="city">北京<i class="i_ow"></i>延安</span><span class="date">04.26</span><span class="dis">1折</span><span class="pr"><i class="rmb">¥</i>89</span></a></li>            <li><a title="¥92 北京-鄂尔多斯 05.05 1.1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%84%82%E5%B0%94%E5%A4%9A%E6%96%AF&amp;fromDate=2015-05-05&amp;toDate=2015-05-08&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090022"><span class="city">北京<i class="i_ow"></i>鄂尔多斯</span><span class="date">05.05</span><span class="dis">1.1折</span><span class="pr"><i class="rmb">¥</i>92</span></a></li>            <li><a title="¥92 北京-榆林 04.27 1.1折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%A6%86%E6%9E%97&amp;fromDate=2015-04-27&amp;toDate=2015-04-30&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090023"><span class="city">北京<i class="i_ow"></i>榆林</span><span class="date">04.27</span><span class="dis">1.1折</span><span class="pr"><i class="rmb">¥</i>92</span></a></li>    </ul><div class="line"></div><ul class="ul_route_lst">            <li><a title="¥206北京-无锡 04.24 1.2折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%97%A0%E9%94%A1&amp;fromDate=2015-04-24&amp;toDate=2015-04-27&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090024"><span class="city">北京<i class="i_ow"></i>无锡</span><span class="date">04.24</span><span class="dis">1.2折</span><span class="pr"><i class="rmb">¥</i>206</span></a></li>            <li><a title="¥88北京-连云港 05.06 1.2折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E8%BF%9E%E4%BA%91%E6%B8%AF&amp;fromDate=2015-05-06&amp;toDate=2015-05-09&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090025"><span class="city">北京<i class="i_ow"></i>连云港</span><span class="date">05.06</span><span class="dis">1.2折</span><span class="pr"><i class="rmb">¥</i>88</span></a></li>            <li><a title="¥108北京-南阳 04.18 1.2折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%8D%97%E9%98%B3&amp;fromDate=2015-04-18&amp;toDate=2015-04-21&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090026"><span class="city">北京<i class="i_ow"></i>南阳</span><span class="date">04.18</span><span class="dis">1.2折</span><span class="pr"><i class="rmb">¥</i>108</span></a></li>            <li><a title="¥209北京-南京 04.20 1.3折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%8D%97%E4%BA%AC&amp;fromDate=2015-04-20&amp;toDate=2015-04-23&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090027"><span class="city">北京<i class="i_ow"></i>南京</span><span class="date">04.20</span><span class="dis">1.3折</span><span class="pr"><i class="rmb">¥</i>209</span></a></li><li class="li_space"></li>            <li><a title="¥210北京-西宁 04.19 1.3折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E8%A5%BF%E5%AE%81&amp;fromDate=2015-04-19&amp;toDate=2015-04-22&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090028"><span class="city">北京<i class="i_ow"></i>西宁</span><span class="date">04.19</span><span class="dis">1.3折</span><span class="pr"><i class="rmb">¥</i>210</span></a></li>            <li><a title="¥87北京-潍坊 04.18 1.3折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E6%BD%8D%E5%9D%8A&amp;fromDate=2015-04-18&amp;toDate=2015-04-21&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090029"><span class="city">北京<i class="i_ow"></i>潍坊</span><span class="date">04.18</span><span class="dis">1.3折</span><span class="pr"><i class="rmb">¥</i>87</span></a></li>            <li><a title="¥98北京-长治 04.20 1.3折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E9%95%BF%E6%B2%BB&amp;fromDate=2015-04-20&amp;toDate=2015-04-23&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090030"><span class="city">北京<i class="i_ow"></i>长治</span><span class="date">04.20</span><span class="dis">1.3折</span><span class="pr"><i class="rmb">¥</i>98</span></a></li>            <li><a title="¥96北京-大连 04.22 1.4折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%A4%A7%E8%BF%9E&amp;fromDate=2015-04-22&amp;toDate=2015-04-25&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090031"><span class="city">北京<i class="i_ow"></i>大连</span><span class="date">04.22</span><span class="dis">1.4折</span><span class="pr"><i class="rmb">¥</i>96</span></a></li><li class="li_space"></li>            <li><a title="¥218北京-南昌 04.19 1.5折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%8D%97%E6%98%8C&amp;fromDate=2015-04-19&amp;toDate=2015-04-22&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090032"><span class="city">北京<i class="i_ow"></i>南昌</span><span class="date">04.19</span><span class="dis">1.5折</span><span class="pr"><i class="rmb">¥</i>218</span></a></li>            <li><a title="¥152北京-乌海 05.05 1.4折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E4%B9%8C%E6%B5%B7&amp;fromDate=2015-05-05&amp;toDate=2015-05-08&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090033"><span class="city">北京<i class="i_ow"></i>乌海</span><span class="date">05.05</span><span class="dis">1.4折</span><span class="pr"><i class="rmb">¥</i>152</span></a></li>            <li><a title="¥235北京-常州 04.16 1.5折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%B8%B8%E5%B7%9E&amp;fromDate=2015-04-16&amp;toDate=2015-04-19&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090034"><span class="city">北京<i class="i_ow"></i>常州</span><span class="date">04.16</span><span class="dis">1.5折</span><span class="pr"><i class="rmb">¥</i>235</span></a></li>            <li><a title="¥206北京-宁波 04.12 1.6折" href="/twell/flight/Search.jsp?fromCity=%E5%8C%97%E4%BA%AC&amp;toCity=%E5%AE%81%E6%B3%A2&amp;fromDate=2015-04-12&amp;toDate=2015-04-15&amp;searchType=OnewayFlight&amp;from=tejia_d_search" target="_blank" hidefocus="on" data-track="key=101090035"><span class="city">北京<i class="i_ow"></i>宁波</span><span class="date">04.12</span><span class="dis">1.6折</span><span class="pr"><i class="rmb">¥</i>206</span></a></li>    </ul></div><div class="e_route_lk">
+              <span style="color: #888">折扣说明：经济舱折扣以标准经济舱全价为基础计算得出</span>
+            </div></div></div>
+          </div>
+        </div>
+        <div class="b_fly_ban"><div class="left-ad-banner"><abbr id="ad_home_leftAD_bottom" style="display:none;" data-style="width:100%; margin:0 0 25px;" data-type="qde" data-query="chan=flight&pg=home&pos=mid&site=qunar&size=912x90"></abbr> </div></div>
+      </div>
+      <div class="l_rside qunar-assist-hide">
+        <div class="b_fly_ban_b">
+          <abbr id="rightTopBanner" style="display:none;" data-type="qde" data-style="width:100%; margin-bottom:16px;"  data-query="chan=flight&pg=home&pos=top&site=qunar&size=272x220"></abbr>
+        </div>
+        <div class="b_fly_ban_b">
+          <div class="e_ban_mid"> <abbr id="ad_home_rightAD_top2" style="display:none;" data-style="width:100%;" data-type="qde" data-query="chan=flight&pg=home&pos=top&site=qunar&size=230x90"></abbr> </div>
+          <div class="un_hd" id="ifmRightTextlink_title" style="display:none;">
+            <p>去哪儿网广告推荐</p>
+            <a href="#" target="_blank" class="more"><i class="arr_right"></i></a> </div>
+          <abbr id="ifmRightTextlink" style="display:none;" data-style="width:100%;" data-type="qad" data-query="vataposition=QNR_OA==_CN&tag=99&rows=14&cur_page_num=0&rep=1&f=s"></abbr>
+          <div class="un_ft" id="ifmRightTextlink_footer">
+            <div class="ftbg"></div>
+          </div>
+        </div>
+        <div class="b_fly_ban_b">
+          <abbr id="rightFlightImgGoBanner" style="display:none;"  data-style="width:100%;" data-type="qad" data-host="flightopdata" data-query="id=11"></abbr> </div>
+        <div class="flight_seat">
+          <a title="在线选座" onclick="window.GodEye.log({r: 'flight_seat_click'})" target="_blank" href="#"><img src="//s.qunarzz.com/flight_seat_rn/images/desktop/home_link.png "/></a>
+        </div>
+        <div class="b_fly_ban_b notice" id="notice">
+          <abbr id="noticeList" style="display:none;"  data-style="width:100%;" data-type="qad" data-host="flightopdata" data-query="id=82"></abbr>
+        </div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+</body>
+</html>
